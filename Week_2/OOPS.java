@@ -1,0 +1,50 @@
+package music;
+
+public interface Playable {
+    void play();
+}
+package music.string;
+
+import music.Playable;
+
+public class Veena implements Playable {
+
+    public void play() {
+        System.out.println("Playing Veena");
+    }
+}
+package music.wind;
+
+import music.Playable;
+
+public class Saxophone implements Playable {
+
+    public void play() {
+        System.out.println("Playing Saxophone");
+    }
+}
+import music.string.Veena;
+import music.wind.Saxophone;
+
+public class Test {
+
+    public static void main(String[] args) {
+
+        // a. Create an instance of Veena and call play()
+        Veena veena = new Veena();
+        veena.play();
+
+        // b. Create an instance of Saxophone and call play()
+        Saxophone saxophone = new Saxophone();
+        saxophone.play();
+
+        // c. Place the above instances in a variable of type Playable
+        Playable p;
+
+        p = veena;
+        p.play();
+
+        p = saxophone;
+        p.play();
+    }
+}
